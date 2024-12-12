@@ -8,7 +8,7 @@ file_data = file.read()
 file.close()
 
 ## chave para descriptografia
-key = b"testeransomwares"
+key = b"testeransomware"
 aes = pyaes.AESModeOfOperationCTR(key)
 decrypt_data = aes.decrypt(file_data)
 
@@ -16,7 +16,7 @@ decrypt_data = aes.decrypt(file_data)
 os.remove(file_name)
 
 ## criar o arquivo descriptografado
-new_file = "teste.txt"
+new_file = "teste001.txt"
 new_file = open(f'{new_file}', "wb")
 new_file.write(decrypt_data)
 new_file.close()
